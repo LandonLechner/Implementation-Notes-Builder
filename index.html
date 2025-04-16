@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Notes Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="topHalf">
+            <div class="title">
+                <img src="./MedBest Logo.png" width="175px">
+                <h1>Implementation Notes Builder</h1>
+            </div>
+            <!-- <p class="helpText">Use tab and shift+tab to move between options. Spacebar toggles buttons on or off. 
+                Click and drag the horizontal divider to resize the top and bottom sections.</p> -->
+                <form>
+                <br>
+                    <div>
+                        <span>Build Time: 60 Days - </span>
+                        <select id="buildTimeTog" style="width:200px">
+                            <option value=" Build Time: 60 Days - NEW Content Required">NEW Content Required</option>
+                            <option value=" Build Time: 60 Days - Content Carryover">Content Carryover</option>
+                        </select>
+                    </div>
+                    <h2>Set-up Pricing</h2>
+                    <div>
+                        <button type="button" class="toggleButtonOff" id="setupTog">Website Setup Fee</button>
+                        <button type="button" class="toggleButtonOff" id="utahTog" style="display: none">Utah</button>
+                        <button type="button" class="toggleButtonOff" id="templateTog" style="display: none">Custom</button>
+                        <label id="setupFeePriceLabel" class="label" style="display:none">Discounted Price:
+                            <input value="2500" autocomplete="off" type="number" id="setupFeeTemplate" style="width:65px">
+                            <input value="5000" autocomplete="off" type="number" id="setupFeeCustom" style="width:65px">
+                        </label>
+                        <br>
+                        <button type="button" class="toggleButtonOff" id="setupExtraTog">Author Extra Content Page</button>
+                        <label id="retailSetupExtraNumberLabel" class="label" style="display:none">Quantity:
+                            <input value="10" autocomplete="off" type="number" id="retailSetupExtraNumber" style="width:40px">
+                        </label>
+                        <label id="extraPagePriceLabel" class="label" style="display:none">Discounted Price/Page:
+                            <input value="150" autocomplete="off" type="number" id="extraPagePrice" style="width:65px">
+                        </label>
+                        <br>
+                        <button type="button" class="toggleButtonOff" id="chatTog">Managed Chat</button>
+                        <label id="chatPriceLabel" class="label" style="display:none">Setup Fee:
+                            <input value="100" autocomplete="off" type="number" id="chatPrice" style="width:65px">
+                        </label>
+                        <br>
+                    </div>
+                    <h2>Monthly Pricing</h2>
+                    <div>
+                        <button type="button" class="toggleButtonOff" id="webBaseTog">$299 Website Base Level</button>
+                    </div>
+                    <button type="button" class="toggleButtonOff" id="sEO1Tog">SEO Add-on 1</button>
+                    <input value="200" typeautocomplete="off" type="number" placeholder="Discounted Price" 
+                        id="sEO1Price" style="width:65px; display:none;">
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="sEO2Tog">SEO Add-on 2</button>
+                    <input value="250" typeautocomplete="off" type="number" placeholder="Discounted Price" 
+                        id="sEO2Price" style="width:65px; display:none;">
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="boost1Tog">Boost Feature 1</button>
+                    <input value="75" typeautocomplete="off" type="number" placeholder="Discounted Price" 
+                        id="boost1Price" style="width:65px; display:none;">
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="boost2Tog">Boost Feature 2</button>
+                    <input value="75" typeautocomplete="off" type="number" placeholder="Discounted Price" 
+                        id="boost2Price" style="width:65px; display:none;">
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="boost3Tog">Boost Feature 3</button>
+                    <input value="75" typeautocomplete="off" type="number" placeholder="Discounted Price" 
+                        id="boost3Price" style="width:65px; display:none;">
+                    <br>	        
+                    <button type="button" class="toggleButtonOff" id="blogTog">Monthly Blogs</button>
+                        <select name="blogNum" id="blogNum" style="display:none;">
+                            <option value="1X">1X</option>
+                            <option value="2X">2X</option>
+                            <option value="3X">3X</option>
+                            <option value="4X">4X</option>
+                        </select>
+                    <label id="blogPriceLabel" class="label" style="display:none">Discounted Price:
+                        <input value="250" typeautocomplete="off" type="number" id="blogPrice1x" style="width:65px">
+                        <input value="500" typeautocomplete="off" type="number" id="blogPrice2x" style="width:65px">
+                        <input value="700" typeautocomplete="off" type="number" id="blogPrice3x" style="width:65px">
+                        <input value="800" typeautocomplete="off" type="number" id="blogPrice4x" style="width:65px">
+                    </label>
+                    <div id="monthlyBtnSpacing"></div>
+                    <button type="button" class="toggleButtonOff" id="xProviderTog">Extra Provider</button>
+                    <label id="xProviderNumberLabel" class="label" style="display:none">Quantity:
+                        <input value="1" typeautocomplete="off" type="number" id="xProviderNumber" style="width:40px">
+                    </label>
+                    <label id="xProviderPriceLabel" class="label" style="display:none">Discounted Price/Provider:
+                        <input value="250" typeautocomplete="off" type="number" id="xProviderPrice" style="width:65px">
+                    </label>
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="xFacilityTog">Extra Facility</button>
+                    <label id="xFacilityNumberLabel" class="label" style="display:none">Quantity:
+                        <input value="1" typeautocomplete="off" type="number" id="xFacilityNumber" style="width:40px">
+                    </label>
+                    <label id="xFacilityPriceLabel" class="label" style="display:none">Discounted Price/Facility:
+                        <input value="250" typeautocomplete="off" type="number" id="xFacilityPrice" style="width:65px">
+                    </label>
+                    <div id="monthlyBtnSpacing"></div>
+                    <button type="button" class="toggleButtonOff" id="pPCMgmtTog">PPC Leads</button>
+                    <label id="pPCMgmtPriceLabel" class="label" style="display:none">Management Fee:
+                        <input value="250" typeautocomplete="off" type="number" id="pPCMgmtPrice" style="width:65px">
+                    </label>
+                    <label id="pPCBudgetPriceLabel" class="label" style="display:none">Budget:
+                        <input value="500" typeautocomplete="off" type="number" id="pPCBudgetPrice" style="width:65px">
+                    </label>
+                    <br> 
+                    <button type="button" class="toggleButtonOff" id="socialTog">Social Media 2.0</button>
+                    <label id="socialMgmtPriceLabel" class="label" style="display:none">Management Fee:
+                        <input value="250" typeautocomplete="off" type="number" id="socialMgmtPrice" style="width:65px">
+                    </label>
+                        <label id="socialBudgetPriceLabel" class="label" style="display:none">Budget:
+                        <input value="500" typeautocomplete="off" type="number" id="socialBudgetPrice" style="width:65px">
+                    </label>
+                    <br>
+                    <button type="button" class="toggleButtonOff" id="comboTog">Combo Ads</button>
+                    <label id="comboMgmtPriceLabel" class="label" style="display:none">Management Fee:
+                        <input value="500" typeautocomplete="off" type="number" id="comboMgmtPrice" style="width:65px">
+                    </label> 
+                    <label id="comboPPCBudgetPriceLabel" class="label" style="display:none">PPC Budget:
+                        <input value="500" typeautocomplete="off" type="number" id="comboPPCBudgetPrice" style="width:65px">
+                    </label> 
+                    <label id="comboSocialBudgetPriceLabel" class="label" style="display:none">Social Budget:
+                        <input value="500" typeautocomplete="off" type="number" id="comboSocialBudgetPrice" style="width:65px">
+                    </label>  
+                    <div id="monthlyBtnSpacing"></div>
+                    <div>
+                        <button type="button" class="toggleButtonOff" id="stratPlusTog">$1000 Strategy Plus</button>
+                    </div>
+                    <div>
+                        <button type="button" class="toggleButtonOff" id="aug1Tog">$50 Augment 1</button>
+                        <button type="button" class="toggleButtonOff" id="aug2Tog">$50 Augment 2</button>
+                    </div>
+                    <div>
+                        <button type="button" class="toggleButtonOff" id="aug3Tog">$100 Augement 3</button>
+                        <button type="button" class="toggleButtonOff" id="aug4Tog">$150 Augement 4</button>
+                    </div>
+                    <br>
+                    <textarea id="areasOfInterest" class="bottomFormInputs" placeholder="Area of Interest/Notes:"></textarea>
+                    <br>
+                    <br>
+                    <div>
+                        <input autocomplete="off" type="text" placeholder="Onboarding Form Link" 
+                            id="onboardingForm" class="bottomFormInputs" style="width: 500px">
+                    </div>
+                    <br>
+                    <div>
+                        <input autocomplete="off" type="text" placeholder="PM: (Leave blank if TBD)" 
+                            id="pM" class="bottomFormInputs" style="width:200px;">
+                    </div>
+                    <br>
+                    <div>
+                        <input autocomplete="off" type="text" placeholder="CSM: (Leave blank if TBD)" 
+                            id="cSM" class="bottomFormInputs" style="width:200px">
+                    </div>
+                    <br>
+                    <textarea id="design" class="bottomFormInputs" placeholder="Design: (If Template, specify which template here. Otherwise add site links here ONLY if design was discussed. Non-MM sites can also be added here.)"></textarea>
+                    <div>
+                    <br>
+                    <textarea id="procedures" class="bottomFormInputs" placeholder="Procedures List:"></textarea>
+                    <br>
+                    <span>This list of procedures</span>
+                    <select id="proceduresConfirmTog" style="width:100px">
+                        <option value="This list of procedures HAS NOT been confirmed by the customer.">HAS NOT</option>
+                        <option value="This list of procedures has been confirmed by the customer.">has</option>
+                    </select>
+                    <span>been confirmed by the customer</span>
+                    </div>
+                    <br>
+                    <div>
+                        <input autocomplete="off" type="text" placeholder="Current URL: (Leave blank if TBD)" 
+                            id="uRL" class="bottomFormInputs" style="width:300px;">
+                    </div>
+                    <br>
+                    <div>
+                        <input autocomplete="off" type="text" placeholder="Other Web Vendor: (Leave blank if N/A)" 
+                            id="otherWeb" class="bottomFormInputs" style="width:300px;">
+                    </div>
+                    <div>
+                        <h2>Communication</h2>
+                        <input autocomplete="off" type="text" placeholder="Name:" 
+                            id="commName" class="bottomFormInputs" style="width:200px;">
+                        <br>
+                        <input autocomplete="off" type="text" placeholder="Phone:" 
+                            id="commPhone" class="bottomFormInputs" style="width:200px;">
+                        <button type="button" class="toggleButtonOn" id="commCellTog">Cell</button>
+                        <br>
+                        <input autocomplete="off" type="text" placeholder="Email:" 
+                            id="commEmail" class="bottomFormInputs" style="width:200px;">
+                    </div>
+                    <div>
+                        <h2>Billing</h2>
+                        <button type="button" class="toggleButtonOn" id="billingSameTog">Same as above</button>
+                        <br>
+                        <input autocomplete="off" type="text" placeholder="Name:" 
+                            id="billingName" class="bottomFormInputs" style="width:200px; display:none;">
+                        <br>
+                        <input autocomplete="off" type="text" placeholder="Phone:" 
+                            id="billingPhone" class="bottomFormInputs" style="width:200px; display:none;">
+                        <button type="button" class="toggleButtonOn" id="billingCellTog" style="display:none;">Cell</button>
+                        <br>
+                        <input autocomplete="off" type="text" placeholder="Email:" 
+                            id="billingEmail" class="bottomFormInputs" style="width:200px; display:none;">
+                    </div>
+                </form>
+            </div>
+            <div class="bottomHalf">
+                <div id="divider"></div>
+                <button id="copyButton">Copy Notes</button>
+                <p id="output" ></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    background: gray;
+    margin: 0;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    max-width: 750px;
+    padding-left: clamp(20px, 5vw, 60px);
+    padding-right: clamp(20px, 5vw, 60px);
+    background: white;
+    box-shadow: 6px 10px 10px -2px rgba(0,0,0,0.3);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.topHalf {
+    height: 77vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0 20px;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.bottomHalf {
+    overflow: scroll;
+    height: 23vh;
+    padding-bottom: 0;
+    overflow-x: hidden;
+    padding: 0 20px 1px;
+    width: 100%;
+    position: relative;
+    scrollbar-width: none;
+}
+
+p {
+ margin: 0;
+}
+
+input {
+    height: 22px;
+    position: relative;
+    top: -1px;
+}
+
+select {
+    min-height: 27px;
+    position: relative;
+    top: -1px;
+    font-size: 1rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    margin-top: 35px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 200;
+    font-size: clamp(1rem, 10vw, 3rem);
+    margin: 10px;
+}
+
+h2 {
+    margin: 30px 0 -1px 0;
+    font-weight: 200;    
+}
+
+.label {
+    color: gray;
+    font-size: 0.85rem;
+}
+
+.helpText {
+    max-width: 750px;
+    color: gray;
+}
+
+#monthlyBtnSpacing {
+    height: 25px;
+}
+
+#retailBlogNum {
+    width: 75px;
+}
+
+#areasOfInterest {
+    min-height: 16rem;
+    width: 550px;
+    resize: vertical;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+}
+
+#design {
+    min-height: 8rem;
+    width: 400px;
+    resize: vertical;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+}
+
+#procedures {
+    min-height: 8rem;
+    width: 400px;
+    resize: vertical;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+    margin-bottom: 4px;
+}
+
+#divider {
+    background-color: gray;
+    height: 1px;
+    border-top: #fff 7px solid;
+    border-bottom: #fff 7px solid;
+    cursor: row-resize;
+    position: fixed;
+    left: 50%;
+    top: 77vh;
+    transform: translateX(-50%);
+    z-index: 10;
+    max-width: 750px;
+    width: calc(100% - (clamp(20px, 5vw, 60px) * 2));
+}
+
+#divider:hover {
+    border-top: #eee 7px solid;
+    border-bottom: #eee 7px solid;
+}
+
+#divider:active {
+    border-top: #eee 7px solid;
+    border-bottom: #eee 7px solid;
+}
+
+.bottomFormInputs {
+    font-size: 1rem;
+}
+
+.toggleButtonOff {
+    background: linear-gradient(to left, white 50%, #07A3C8 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 150ms, box-shadow 0.15s ease-in-out;
+    padding: 3px 20px;
+    font-size: 1rem;
+    box-shadow: 6px 10px 10px -2px rgba(0,0,0,0.3);
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #07A3C8;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.toggleButtonOff:active {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+        
+.toggleButtonOff:hover {
+    background-position: left bottom;
+    background-color: #07A3C8;
+    border: 2px solid #07A3C8;
+    color: white;
+}
+
+.toggleButtonOn {
+    padding: 3px 20px;
+    font-size: 1rem;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-in-out;
+    background-color: #45BBD6;
+    border-radius: 3px;
+    border: 2px solid #45BBD6;
+    margin: 3px 0;
+    color: white;
+}
+
+.toggleButtonOn:hover {
+    background-position: left bottom;
+    background-color: #07A3C8;
+    border: 2px solid #07A3C8;
+}
+
+
+#copyButton {
+    background-color: #0f960f;
+    border: none;
+    width: 200px;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    padding: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    box-shadow: 6px 10px 10px -2px rgba(0,0,0,0.3);
+    margin: 30px 0;
+}
+
+#copyButton:hover {
+    background-color: #0b6e0b;
+}
+
+#copyButton:active {
+    transform: scale(0.90);
+}
+
+
+#message.hidden, #message2.hidden {
+    display: none;
+}
+
+#message, #message2 {
+    color: green;
+    font-weight: bold;
+}
+
+/* button:focus {
+    background: #0d9abd;
+    color: white;
+} */
