@@ -91,6 +91,10 @@ h2 {
     color: gray;
 }
 
+.aug {
+    width: 175px;
+}
+
 #monthlyBtnSpacing {
     height: 25px;
 }
